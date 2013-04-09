@@ -40,6 +40,9 @@
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
     <IntDir>$(Configuration).win32\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\chapi\Downloads\boost_1_53_0\boost_1_53_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\chapi\Downloads\boost_1_53_0\boost_1_53_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
@@ -119,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Image Include="..\Resources\archer.png" />
+    <Image Include="..\Resources\ball.png" />
     <Image Include="..\Resources\CloseNormal.png" />
     <Image Include="..\Resources\CloseSelected.png" />
     <Image Include="..\Resources\HelloWorld.png" />
@@ -143,6 +147,7 @@
     <ClInclude Include="..\Classes\Scene.h" />
     <ClInclude Include="..\Classes\SpriteUtils.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -158,6 +163,7 @@
     <ClCompile Include="..\Classes\MenuScene.cpp" />
     <ClCompile Include="..\Classes\SpriteUtils.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

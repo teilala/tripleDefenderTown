@@ -57,6 +57,9 @@
     <Image Include="..\Resources\ninja.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\ball.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="tripleDefenderTown.rc">
@@ -106,6 +109,9 @@
     <ClInclude Include="..\Classes\Map.h">
       <Filter>view\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -142,6 +148,9 @@
       <Filter>view\Game</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

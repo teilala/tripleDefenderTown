@@ -1,11 +1,6 @@
-﻿已經開始建置於 2013/4/10 上午 03:01:05。
+﻿已經開始建置於 2013/4/10 上午 04:55:07。
      1>節點 2 (Build 目標) 上的專案 "D:\GitHub\tripleDefenderTown\tripleDefenderTown\tripleDefenderTown\proj.win32\tripleDefenderTown.win32.vcxproj"。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx" /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\include" /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\kazmath\include" /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\platform\win32" /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\platform\third_party\win32" /I"D:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\platform\third_party\win32\OGLES" /I"D:\cocos2d-2.1rc0-x-2.1.2\CocosDenshion\include" /I..\Classes /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp
-         AppDelegate.cpp
-     1>d:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\particle_nodes\ccparticlesystemquad.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
-     1>d:\cocos2d-2.1rc0-x-2.1.2\cocos2dx\platform\ccsaxparser.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
-       Link:
+     1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\ libcocos2d.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.lib" /MACHINE:X86 Debug.win32\tripleDefenderTown.res
          Debug.win32\AppDelegate.obj
          Debug.win32\Basic.obj
@@ -18,10 +13,11 @@
          Debug.win32\MenuScene.obj
          Debug.win32\SpriteUtils.obj
          Debug.win32\VisibleRect.obj
+         Debug.win32\Ball.obj
          Debug.win32\main.obj
          tripleDefenderTown.win32.vcxproj -> D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.exe
      1>專案 "D:\GitHub\tripleDefenderTown\tripleDefenderTown\tripleDefenderTown\proj.win32\tripleDefenderTown.win32.vcxproj" (Build 目標) 建置完成。
 
 建置成功。
 
-經過時間 00:00:01.83
+經過時間 00:00:00.24
