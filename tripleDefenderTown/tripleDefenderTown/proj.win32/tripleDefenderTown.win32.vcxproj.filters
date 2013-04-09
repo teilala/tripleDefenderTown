@@ -13,6 +13,24 @@
       <UniqueIdentifier>{f1e40a41-8b66-4284-97f1-7891756d1407}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
     </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{da2d543c-c854-4428-a11d-f48499c14695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\Equip">
+      <UniqueIdentifier>{c079e65e-40ff-4d92-87f2-485cd9aa6f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\Game">
+      <UniqueIdentifier>{09f2f255-9d4d-491c-a42f-7870b558b720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\Menu">
+      <UniqueIdentifier>{400b70a5-fec6-4a66-b9b6-9061d95f088e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\unit">
+      <UniqueIdentifier>{5d05e0cc-9937-464e-8fe3-8d6e2a5c2aae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{282827a6-2190-4e4c-a095-179fd3c6b71a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\tripleDefenderTown.ico">
@@ -25,6 +43,18 @@
       <Filter>resource</Filter>
     </Image>
     <Image Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\archer.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\knight.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\map.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\ninja.png">
       <Filter>resource</Filter>
     </Image>
   </ItemGroup>
@@ -46,6 +76,36 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Basic.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\controller.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Defender.h">
+      <Filter>view\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EquipScene.h">
+      <Filter>view\Equip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>view\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuScene.h">
+      <Filter>view\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpriteUtils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Map.h">
+      <Filter>view\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,8 +114,46 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Basic.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\controller.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Defender.cpp">
+      <Filter>view\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EquipScene.cpp">
+      <Filter>view\Equip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>view\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MenuScene.cpp">
+      <Filter>view\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpriteUtils.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Map.cpp">
+      <Filter>view\Game</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>source</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\archer.plist">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\knight.plist">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\ninja.plist">
+      <Filter>resource</Filter>
+    </None>
   </ItemGroup>
 </Project>
