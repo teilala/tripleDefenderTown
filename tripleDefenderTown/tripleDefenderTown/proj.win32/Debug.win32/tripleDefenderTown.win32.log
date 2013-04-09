@@ -1,0 +1,13 @@
+﻿已經開始建置於 2013/4/10 上午 02:44:23。
+     1>節點 2 (Build 目標) 上的專案 "D:\GitHub\tripleDefenderTown\tripleDefenderTown\tripleDefenderTown\proj.win32\tripleDefenderTown.win32.vcxproj"。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\ libcocos2d.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.lib" /MACHINE:X86 Debug.win32\tripleDefenderTown.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\HelloWorldScene.obj
+         Debug.win32\main.obj
+         tripleDefenderTown.win32.vcxproj -> D:\GitHub\tripleDefenderTown\tripleDefenderTown\Debug.win32\tripleDefenderTown.win32.exe
+     1>專案 "D:\GitHub\tripleDefenderTown\tripleDefenderTown\tripleDefenderTown\proj.win32\tripleDefenderTown.win32.vcxproj" (Build 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:00.22
