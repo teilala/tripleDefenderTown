@@ -26,10 +26,27 @@ public:
 	~Map();
 	static Map* create();
 	CCLayer* getLayer();
+	void initMaps();
 	void setLayerPosition(float x,float y);
-	void addDefender(int type,int lv,float px,float py);
+	bool addDefender(int id,int lv,int px,int py);
+	Defender* getDefender(int px,int py);
+	void getConnectionDefenders(Defender* defender, int id,int lv,int px,int py);
+	void _getConnectionDefenders(Defender* defender, int id,int lv,int px,int py);
+	bool indexof(Defender* arr[],Defender* defender);
+	bool checkMerge(int id,int lv,int num);
+	void checkConnect(Defender* defender);
+	void stopConnectAni(Defender* arr[]);
+	void showConnectAni(Defender* targetDefender,Defender* arr[]);
 private:
-	MapLayer *layer;
+	MapLayer* layer;
+	Defender* maps[MAP_ROW][MAP_COL];
+	Defender* tempConnect[MAP_ROW*MAP_COL];
+	int tempConnectIndex;
+	Defender* mergeArr[MAP_ROW*MAP_COL];
+	int mergeIndex;
+	void pushArray(Defender* sourceArr[],Defender* targetArr[]);
+	void clearDefenders(Defender* sourceArr[]);
+	void initMergeArr();
 };
 #endif
 

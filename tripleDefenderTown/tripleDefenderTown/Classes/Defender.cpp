@@ -1,35 +1,90 @@
 ﻿#include "Defender.h"
 
-Defender::Defender(char *n,char *dSprite)
+Defender::Defender(int id,int lv,char *n,char *dSprite)
 {
-	 name=n;
+	this->id=id;
+	this->lv=lv;
+	 spriteName=n;
 	 defaultSprite=dSprite;
+	 sprite=0;
+
 }
 Defender::~Defender(void)
 {
 }
-Defender* Defender::create(char *n,char *dSprite)
+Defender* Defender::create(int id,int lv)
 {
-	 Defender * pRet = new Defender(n,dSprite);
+	char *name;
+	char *dSprite;
+	switch (id)
+	{
+	case 1:
+	default:
+		name="knight";
+		dSprite="knight_stand_0.png";
+		break;
+	case 2:
+		name="ninja";
+		dSprite="ninja_stand_0.png";
+		break;
+	case 3:
+		name="archer";
+		dSprite="archer_stand_0.png";
+		break;
+	}
+	
+	 Defender * pRet = new Defender(id,lv,name,dSprite);
 	 return pRet;
 	 CC_SAFE_DELETE(pRet);
 	 return NULL;
 }
 DefenderSprite* Defender::getSprite()
 {
-	if(defaultSprite)
-		sprite = DefenderSprite::createWithName(defaultSprite);
-	return sprite;
+	if(sprite)
+		return sprite;
+	else
+	{
+		if(defaultSprite)
+		{
+			sprite = DefenderSprite::createWithName(defaultSprite);
+			setLv(this->lv);
+		return sprite;
+		}
+	}
 }
 
-void Defender::setPosition(float x,float y)
+void Defender::setPosition(int px,int py)
+{
+	this->px=px;
+	this->py=py;
+	float dy=sprite->getContentSize().height/2*sprite->getScale();
+	sprite->setPosition(ccp(px*MAP_GRID_WIDTH+(MAP_GRID_WIDTH/2),py*MAP_GRID_HEIGHT+dy+LAND_DISTANCE));
+}
+void Defender::updatePosition()
 {
 	float dy=sprite->getContentSize().height/2*sprite->getScale();
-	sprite->setPosition(ccp(x,y+dy));
+	sprite->setPosition(ccp(px*MAP_GRID_WIDTH+(MAP_GRID_WIDTH/2),py*MAP_GRID_HEIGHT+dy+LAND_DISTANCE));
+}
+void Defender::setLv(int lv)
+{
+	this->lv=lv;
+	switch(lv)
+	{
+		case 1:
+		setScale(.3);
+		break;
+		case 2:
+		setScale(.6);
+		break;
+		case 3:
+		setScale(1);
+		break;
+	}
 }
 void Defender::setScale(float s)
 {
 	sprite->setScale(s);
+	updatePosition();
 }
 void Defender::runAnimate(int nInd,float delay,int loops,bool RestoreOriginalFrame)
 {
@@ -47,7 +102,7 @@ void Defender::runAnimate(int nInd,float delay,int loops,bool RestoreOriginalFra
 			type="skill";
 		break;
 	}
-	CCAnimation *animation = SpriteUtils::animationWithSingleFrames(string(string(name) + "_"+type+"_").c_str());
+	CCAnimation *animation = SpriteUtils::animationWithSingleFrames(string(string(spriteName) + "_"+type+"_").c_str());
 	animation->setDelayPerUnit(delay);
 	animation->setLoops(loops);    // 设置循环播放  
 	animation->setRestoreOriginalFrame(RestoreOriginalFrame);

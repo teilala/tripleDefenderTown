@@ -4,8 +4,7 @@
 #define NOTIFY_MAP_MOVE "notify_map_move"
 #define NOTIFY_MAP_END "notify_map_end"
 #define NOTIFY_MAP_CANCEL "notify_map_cancel"
-#define MAP_GRID_WIDTH 30
-#define MAP_GRID_HEIGHT 30
+#include "GameDefine.h"
 #include "Basic.h"
 #include "Defender.h"
 #include "Map.h"
@@ -23,7 +22,8 @@ void onMapTouch(CCObject* obj);
 void onMapMove(CCObject* obj);
 void onMapEnd(CCObject* obj);
 void onMapCancel(CCObject* obj);
-void setMoveDefenderPosition(float px,float py);
+void setMoveDefenderPosition(int px,int py);
+void setNextMoveDefender();
 CREATE_FUNC(GameScene);
 };
 

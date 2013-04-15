@@ -112,6 +112,12 @@
     <ClInclude Include="Ball.h">
       <Filter>source</Filter>
     </ClInclude>
+    <ClInclude Include="Assets.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDefine.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -152,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="Ball.cpp">
       <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDefine.cpp">
+      <Filter>include</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

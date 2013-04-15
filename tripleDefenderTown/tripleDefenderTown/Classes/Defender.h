@@ -1,6 +1,7 @@
 #ifndef _DEFENDER__H_
 #define _DEFENDER__H_
 #include "SpriteUtils.h"
+#include "GameDefine.h"
 #include <string> 
 using namespace std; 
 using namespace cocos2d;
@@ -38,17 +39,20 @@ private:
 class Defender
 {
 public:
-	Defender::Defender(char *n,char *dSprite);
+	Defender(int id,int lv,char *n,char *dSprite);
 	~Defender();
-	static Defender* create(char *n,char *dSprite);
+	static Defender* create(int id,int lv);
 	DefenderSprite* getSprite();
-	void setPosition(float x,float y);
-	void setScale(float s);
+	void setPosition(int px,int py);
+	void updatePosition();
 	void runAnimate(int nInd,float delay,int loops=-1,bool RestoreOriginalFrame=true);
+	void setLv(int lv);
+	int id,lv,px,py;
 private:
 	DefenderSprite *sprite;
-	char *name;
+	char *spriteName;
 	char *defaultSprite;
+	void setScale(float s);
 };
 
 #endif

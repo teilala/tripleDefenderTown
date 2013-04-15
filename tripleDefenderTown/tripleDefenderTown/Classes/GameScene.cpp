@@ -21,11 +21,9 @@ bool GameScene::init()
 		mapLayer->addChild(map);*/
 		CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
 		cache->addSpriteFramesWithFile("knight.plist", "knight.png");
-		moveDefender=Defender::create("knight","knight_stand_0.png");
-		this->addChild(moveDefender->getSprite());
-		setMoveDefenderPosition(0,0);
-		//moveDefender->setScale(.5);
-		moveDefender->runAnimate(kAniSkill,.1f,5,false);
+		cache->addSpriteFramesWithFile("ninja.plist", "ninja.png");
+		cache->addSpriteFramesWithFile("archer.plist", "archer.png");
+		setNextMoveDefender();
 
 		CCLabelTTF* pExitLabel = CCLabelTTF::create("test", "Arial", 24);
          CCMenuItemLabel* item2 = CCMenuItemLabel::create(pExitLabel, this, menu_selector(Controller::menuCallbackTest2) );
@@ -35,7 +33,6 @@ bool GameScene::init()
 		  menu->alignItemsVertically();
 		  addChild(menu);
 		  menu->setPosition(ccp(VisibleRect::center().x,VisibleRect::center().y));
-		 
 		 
 		bRet = true;
     } while (0);
@@ -63,7 +60,7 @@ void GameScene::Show()
 
 void GameScene::menuCallbackTest(CCObject *sender)
 {
-	Defender *newdefender=Defender::create("knight","knight_stand_0.png");
+	Defender *newdefender=Defender::create(1,1);
 	this->addChild(newdefender->getSprite());
 	newdefender->setPosition(VisibleRect::right().x,VisibleRect::center().y);
 	newdefender->runAnimate(kAniSkill,.1f,5,false);
@@ -78,7 +75,8 @@ void GameScene::onMapTouch(CCObject* obj)
 	CCTouch *touch=(CCTouch*)obj;
 	float _px=floor(touch->getLocation().x/MAP_GRID_WIDTH);
 	float _py=floor(touch->getLocation().y/MAP_GRID_HEIGHT);
-	setMoveDefenderPosition(_px,_py);
+	if(!_map->getDefender(_px,_py))
+		setMoveDefenderPosition(_px,_py);
 }
 
 void GameScene::onMapMove(CCObject* obj)
@@ -86,7 +84,8 @@ void GameScene::onMapMove(CCObject* obj)
 	CCTouch *touch=(CCTouch*)obj;
 	float _px=floor(touch->getLocation().x/MAP_GRID_WIDTH);
 	float _py=floor(touch->getLocation().y/MAP_GRID_HEIGHT);
-	setMoveDefenderPosition(_px,_py);
+	if(!_map->getDefender(_px,_py))
+		setMoveDefenderPosition(_px,_py);
 }
 
 void GameScene::onMapEnd(CCObject* obj)
@@ -94,17 +93,31 @@ void GameScene::onMapEnd(CCObject* obj)
 	CCTouch *touch=(CCTouch*)obj;
 	float _px=floor(touch->getLocation().x/MAP_GRID_WIDTH);
 	float _py=floor(touch->getLocation().y/MAP_GRID_HEIGHT);
-	_map->addDefender(0,0,_px,_py);
-	setMoveDefenderPosition(0,0);
+	if(!_map->getDefender(_px,_py))
+	{
+	if(_map->addDefender(moveDefender->id,moveDefender->lv,_px,_py))
+		{
+			this->removeChild(moveDefender->getSprite());
+			moveDefender=NULL;
+			setNextMoveDefender();
+		}
+	}
 }
 
 void GameScene::onMapCancel(CCObject* obj)
 {
 }
 
-void GameScene::setMoveDefenderPosition(float px,float py)
+void GameScene::setMoveDefenderPosition(int px,int py)
 {
-	px=px*MAP_GRID_WIDTH+MAP_GRID_WIDTH/2;
-	py=py*MAP_GRID_HEIGHT+10;
 	moveDefender->setPosition(px,py);
+	_map->checkConnect(moveDefender);
+}
+void GameScene::setNextMoveDefender()
+{
+		moveDefender=Defender::create(/*rand()%3+1*/1,1);
+		this->addChild(moveDefender->getSprite());
+		moveDefender->setPosition(0,MAP_ROW-1);
+		//moveDefender->setScale(.5);
+		moveDefender->runAnimate(kAniSkill,.1f,5,false);
 }
